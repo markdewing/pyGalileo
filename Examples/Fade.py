@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import sys
 
-galileo_path = "/media/mmcblk0p1/";
+galileo_path = "/media/mmcblk0p1/"
 if galileo_path not in sys.path:
-    sys.path.append(galileo_path);
+    sys.path.append(galileo_path)
 
 from pyGalileo import *
 
@@ -28,29 +28,29 @@ fadeAmount = 5;    # how many points to fade the LED by
 # the setup routine runs once when you press reset:
 def setup():  #{ 
   # declare pin 9 to be an output:
-  global led;
-  pinMode(led, OUTPUT);
+  global led
+  pinMode(led, OUTPUT)
 #} 
 
 # the loop routine runs over and over again forever:
 def loop():  #{ 
-  global brightness;
-  global fadeAmount;
+  global brightness
+  global fadeAmount
   # set the brightness of pin 9:
-  analogWrite(led, brightness);    
+  analogWrite(led, brightness)    
 
   # change the brightness for next time through the loop:
-  brightness = brightness + fadeAmount;
+  brightness = brightness + fadeAmount
 
   # reverse the direction of the fading at the ends of the fade: 
   if ((brightness == 0) or (brightness == 255)): #{
-    fadeAmount = -fadeAmount ; 
+    fadeAmount = -fadeAmount
   #}     
   # wait for 30 milliseconds to see the dimming effect    
-  delay(30);                            
+  delay(30)                            
 #}
 
 if __name__ == "__main__":
-    setup();
+    setup()
     while (1):
-        loop();
+        loop()

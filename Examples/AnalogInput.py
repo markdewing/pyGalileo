@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import sys
 
-galileo_path = "/media/mmcblk0p1/";
+galileo_path = "/media/mmcblk0p1/"
 if galileo_path not in sys.path:
-    sys.path.append(galileo_path);
+    sys.path.append(galileo_path)
 
 from pyGalileo import *
 
@@ -36,33 +36,33 @@ from pyGalileo import *
  
  */
 '''
-sensorPin = A0;    # select the input pin for the potentiometer
-ledPin = 13;      # select the pin for the LED
-sensorValue = 0;  # variable to store the value coming from the sensor
+sensorPin = A0    # select the input pin for the potentiometer
+ledPin = 13      # select the pin for the LED
+sensorValue = 0  # variable to store the value coming from the sensor
 
 def setup():
   # declare the ledPin as an OUTPUT:
-  pinMode(ledPin, OUTPUT);  
+  pinMode(ledPin, OUTPUT)  
 
 
 def loop():
-  global sensorValue;
+  global sensorValue
   # read the value from the sensor:
-  sensorValue = analogRead(sensorPin);    
+  sensorValue = analogRead(sensorPin)    
   # turn the ledPin on
-  digitalWrite(ledPin, HIGH);  
+  digitalWrite(ledPin, HIGH)  
   # stop the program for <sensorValue> milliseconds:
-  delay(sensorValue);          
+  delay(sensorValue)          
   # turn the ledPin off:        
-  digitalWrite(ledPin, LOW);   
+  digitalWrite(ledPin, LOW)   
   # stop the program for for <sensorValue> milliseconds:
-  print("sensorValue:" + str(sensorValue));
-  delay(sensorValue);                  
+  print("sensorValue:" + str(sensorValue))
+  delay(sensorValue)                  
 
   #When the file is run from the command line, this fucntion will execute.
 #This function just calls setup once, then calls loop over and over. 
 if __name__ == "__main__":
     
-    setup();
+    setup()
     while(1):
-        loop();
+        loop()

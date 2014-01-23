@@ -22,7 +22,7 @@
 
 #import the pin library functions
 from GalileoPins import *
-_pins = GalileoPins();
+_pins = GalileoPins()
 
 from Constants import *
 
@@ -40,9 +40,9 @@ def delay(msTime):
     Returns:
         None
     Example:
-        delay(500);   - Delay the script for 500 milliseconds.
+        delay(500)   - Delay the script for 500 milliseconds.
     """
-    time.sleep(msTime/1000);
+    time.sleep(msTime/1000)
     
 def micros():
     """
@@ -56,10 +56,10 @@ def micros():
     Returns:
         (int) Current time in microseconds
     Example:
-        start = micros();
+        start = micros()
         #something that you want to time
         end   = micros()
-        duration = end - start;
+        duration = end - start
     """
     return int(round(time.time() * 1000000))
 
@@ -75,10 +75,10 @@ def millis():
     Returns:
         (int) Current time in milliseconds
     Example:
-        start = millis();
+        start = millis()
         #something that you want to time
         end   = millis()
-        duration = end - start;
+        duration = end - start
     """
     return int(round(time.time() * 1000))
     
@@ -98,11 +98,11 @@ def pinMode(pin, direction):
         -1 (int) if there was an error. 
     
     example:
-        pinMode(13, OUTPUT); - sets up digital pin 13 as an output.
-        pinMode( 2, INPUT);  - sets up digital pin 2 as in input. 
+        pinMode(13, OUTPUT) - sets up digital pin 13 as an output.
+        pinMode( 2, INPUT)  - sets up digital pin 2 as in input. 
 
     """
-    _pins.digitalPins[pin].SetupMode(direction);
+    _pins.digitalPins[pin].SetupMode(direction)
     
 def digitalWrite(pin, value):
     """
@@ -120,10 +120,10 @@ def digitalWrite(pin, value):
         -1 (int) if there was an error. 
     
     example:
-        digitalWrite(13, HIGH); - drives digital pin 13 output to a 1.
-        digitalWrite( 2, LOW);  - drives digital pin 2 output to a 0. 
+        digitalWrite(13, HIGH) - drives digital pin 13 output to a 1.
+        digitalWrite( 2, LOW)  - drives digital pin 2 output to a 0. 
     """
-    _pins.digitalPins[pin].SetValue(value);
+    _pins.digitalPins[pin].SetValue(value)
     
 def digitalRead(pin):
     """
@@ -138,11 +138,11 @@ def digitalRead(pin):
     Returns: 
         Value of the digital pin (HIGH or LOW)
     example:
-        val = digitalRead(13); - reads the digital value on pin 13
-        val = digitalRead( 2); - reads the digital value on pin 2
+        val = digitalRead(13) - reads the digital value on pin 13
+        val = digitalRead( 2) - reads the digital value on pin 2
     """
-    value = _pins.digitalPins[pin].GetValue();
-    return value;
+    value = _pins.digitalPins[pin].GetValue()
+    return value
     
 def analogWrite(pin, value):
     """
@@ -163,10 +163,10 @@ def analogWrite(pin, value):
         -1 (int) if there was an error. 
     
     example:
-        analogWrite(9, 10);  - drives digital pin 9 output to almost 0 Volts. 
-        analogWrite(3, 255); - drives digital pin 2 output to 5 Volts. 
+        analogWrite(9, 10)  - drives digital pin 9 output to almost 0 Volts. 
+        analogWrite(3, 255) - drives digital pin 2 output to 5 Volts. 
     """
-    _pins.digitalPins[pin].SetPWMValue(value);
+    _pins.digitalPins[pin].SetPWMValue(value)
     
 def analogRead(pin):
     """
@@ -185,10 +185,10 @@ def analogRead(pin):
         ~ 0.004888 Volts per number
         
     example:
-        analogRead("A0"); - reads the analog voltage on pin A0
-        analogRead("A1"); - reads the analog voltage on pin A1
+        analogRead("A0") - reads the analog voltage on pin A0
+        analogRead("A1") - reads the analog voltage on pin A1
     """
-    num = pin.replace("A", "").replace("a", "");
-    value = _pins.analogPins[int(num)].GetValue();
-    return value;
+    num = pin.replace("A", "").replace("a", "")
+    value = _pins.analogPins[int(num)].GetValue()
+    return value
    
